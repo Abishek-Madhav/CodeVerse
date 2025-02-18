@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces - Codeverse</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #0d47a1;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #0d47a1;
+        }
+        .data-container {
+            background: #f1f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+        p, li {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+        li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            background: #bbdefb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Codeforces Stats</h1>
+        {% if codeforces_data %}
+            <div class="data-container">
+                <p><strong>Username:</strong> {{ codeforces_data.username }}</p>
+                <p><strong>Rating:</strong> {{ codeforces_data.rating }}</p>
+                <p><strong>Max Rating:</strong> {{ codeforces_data.max_rating }}</p>
+                <p><strong>Rank:</strong> {{ codeforces_data.rank }}</p>
+            </div>
+        {% else %}
+            <p>No Codeforces data available.</p>
+        {% endif %}
+        
+        <h2>Upcoming Contests</h2>
+        {% if upcoming_contests %}
+            <ul>
+                {% for contest in upcoming_contests %}
+                    <li>
+                        <strong>{{ contest.name }}</strong><br>
+                        Start Time: {{ contest.start_time }} (UTC)<br>
+                        Duration: {{ contest.duration }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No upcoming contests found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

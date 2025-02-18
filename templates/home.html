@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Codeverse</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #0d47a1;
+            position: relative;
+        }
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #d32f2f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logout-button:hover {
+            background: #b71c1c;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .card {
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 280px;
+            background: white;
+            border: none;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            background: #f1f8ff;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 25px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .leetcode { background: #ff9800; }
+        .leetcode:hover { background: #e68900; }
+        .codechef { background: #6a1b9a; }
+        .codechef:hover { background: #4a148c; }
+        .codeforces { background: #2196f3; }
+        .codeforces:hover { background: #1565c0; }
+        .geeksforgeeks { background: #388e3c; }
+        .geeksforgeeks:hover { background: #2e7d32; }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <button class="logout-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+    <h1>Welcome back, {{ request.user.first_name }} 🎯</h1>
+    <div class="container">
+        <div class="card">
+            <h2>LeetCode</h2>
+            <a href="{% url 'leetcode' %}" class="leetcode">View LeetCode Profile</a>
+        </div>
+        <div class="card">
+            <h2>GeeksforGeeks</h2>
+            <a href="{% url 'geeksforgeeks' %}" class="geeksforgeeks">View GeeksforGeeks Profile</a>
+        </div>
+        <div class="card">
+            <h2>CodeForces</h2>
+            <a href="{% url 'codeforces' %}" class="codeforces">View Codeforces Profile</a>
+        </div>
+        <div class="card">
+            <h2>CodeChef</h2>
+            <a href="{% url 'codechef' %}" class="codechef">View CodeChef Profile</a>
+        </div>
+    </div>
+    <div class="footer">Made with ❤️ by Abishek Madhav</div>
+</body>
+</html>
