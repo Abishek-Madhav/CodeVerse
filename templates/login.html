@@ -97,8 +97,10 @@
         {% if messages %}
         <div class="message">
             {% for message in messages %}
+                {%if message%}
                 <p>{{ message }}</p>
-            {% endfor %}
+                {%endif%}
+            {%endfor%}
         </div>
         {% endif %}
         <form method="post">

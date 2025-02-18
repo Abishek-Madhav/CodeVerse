@@ -477,6 +477,8 @@ def leetcode_view(request):
         if profile.leetcode_username:
             leetcode_data = get_leetcode_stats(profile.leetcode_username)
             upcoming_contests = get_upcoming_contests()
+        #else:
+            #messages.warning(request, 'No Leetcode username found in profile.')
     except UserProfile.DoesNotExist:
         messages.warning(request, 'Profile not found.')
 
@@ -499,8 +501,8 @@ def codechef_view(request):
             print(f"CodeChef data: {codechef_data}")
             if not codechef_data:
                 messages.warning(request, 'No CodeChef data found.')
-        else:
-            messages.warning(request, 'No CodeChef username found in profile.')
+        #else:
+            #messages.warning(request, 'No CodeChef username found in profile.')
     except UserProfile.DoesNotExist:
         messages.warning(request, 'Profile not found.')
 
@@ -520,8 +522,8 @@ def codeforces_view(request):
             upcoming_contests = get_upcoming_codeforces_contests()
             if not codeforces_data:
                 messages.warning(request, 'No Codeforces data found.')
-        else:
-            messages.warning(request, 'No Codeforces username found in profile.')
+        #else:
+            #messages.warning(request, 'No Codeforces username found in profile.')
     except UserProfile.DoesNotExist:
         messages.warning(request, 'Profile not found.')
 
@@ -540,8 +542,8 @@ def geeksforgeeks_view(request):
             weekly_contests = fetch_weekly_contests()
             if not gfg_data:
                 messages.warning(request, 'No GeeksforGeeks data found.')
-        else:
-            messages.warning(request, 'No GeeksforGeeks username found in profile.')
+        #else:
+            #messages.warning(request, 'No GeeksforGeeks username found in profile.')
     except UserProfile.DoesNotExist:
         messages.warning(request, 'Profile not found.')
 
