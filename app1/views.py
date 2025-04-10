@@ -36,11 +36,6 @@ def get_leetcode_stats(username):
             badges {
                 displayName
             }
-            userCalendar {
-                activeYears
-                streak
-                totalActiveDays
-            }
         }
         userContestRanking(username: $username) {
             attendedContestsCount
@@ -104,11 +99,6 @@ def get_leetcode_stats(username):
         badges = user_data.get("badges", [])
         badge_display_names = [badge.get("displayName", "N/A") for badge in badges]
         
-        # Calendar Stats
-        user_calendar = user_data.get("userCalendar", {})
-        total_active_days = user_calendar.get("totalActiveDays", "N/A")
-        streak = user_calendar.get("streak", "N/A")
-
         # Daily Challenge Question
         daily_challenge_title = daily_challenge["question"]["title"] if daily_challenge else "No active challenge"
         daily_challenge_link = f"https://leetcode.com{daily_challenge['link']}" if daily_challenge else "#"
@@ -128,8 +118,6 @@ def get_leetcode_stats(username):
             "total_participants": total_participants,
             "top_percentage": top_percentage,
             "badges": badge_display_names,
-            "total_active_days": total_active_days,
-            "streak": streak,
             "daily_challenge_title": daily_challenge_title,
             "daily_challenge_link": daily_challenge_link,
         }
