@@ -1,5 +1,6 @@
 Django==4.2
 djangorestframework==3.14.0
+dj-database-url
 mysqlclient==2.2.0  # If using MySQL
 gunicorn==21.2.0  # For deployment
 whitenoise==6.6.0  # For serving static files
