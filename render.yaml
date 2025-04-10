@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: codeverse
+    name: cp_verse
     env: python
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
-    startCommand: "python manage.py migrate && gunicorn codeverse.wsgi:application"
+    startCommand: "python manage.py migrate && gunicorn cp_verse.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: cp_verse.settings
