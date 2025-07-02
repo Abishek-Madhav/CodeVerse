@@ -11,7 +11,7 @@ Code-Verse provides a unified web dashboard that automatically tracks, aggregate
 
 ## **Website** 🌐 
 
-![Screenshot](Assets/Screenshot%202025-06-09%20162234.png)
+![Screenshot](Images/Login.png)
 
 
 
