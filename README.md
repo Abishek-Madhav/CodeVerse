@@ -12,6 +12,11 @@ Code-Verse provides a unified web dashboard that automatically tracks, aggregate
 ## **Website** 🌐 
 
 ![Screenshot](Images/Login.png)
+![Screenshot](Images/Home.png)
+![Screenshot](Images/Leetcode.png)
+![Screenshot](Images/Codeforces.png)
+![Screenshot](Images/GeeksforGeeks.png)
+
 
 
 
